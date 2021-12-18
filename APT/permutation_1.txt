@@ -1,4 +1,4 @@
-Qestion :In how many ways can the 7 letters M, N, O, P, Q, R, S be arranged so that P and Q occupy
+## Qestion :In how many ways can the 7 letters M, N, O, P, Q, R, S be arranged so that P and Q occupy
 continuous positions?
 
 Solution: For arranging the 7 letters keeping P and Q always together we have to view P and Q as one
