@@ -1,3 +1,3 @@
 git add --all
-git commit --all -m "better classical approch see!"
+git commit --all -m "complement short code"
 git push CP master
