@@ -1,37 +1,22 @@
 class Solution
 {
 public:
-    void swap(char &x, char &y)
+    string reverseWords(string s)
     {
-        char temp = x;
-        x = y;
-        y = temp;
-    }
-    string reverseVowels(string s)
-    {
-        int i = 0, j = s.size() - 1;
 
-        for (i = 0; i <= j;)
+        int start = 0;
+        for (int i = 0; i < s.size(); i++)
         {
-            // cout<<"i: "<<i<<"j: "<<j<<endl;
-            if (tolower(s[i]) != 'a' && tolower(s[i]) != 'o' && tolower(s[i]) != 'u' &&
-                tolower(s[i]) != 'i' && tolower(s[i]) != 'e')
-            {
-                i++;
-                continue;
-            }
 
-            if (tolower(s[j]) != 'a' && tolower(s[j]) != 'o' && tolower(s[j]) != 'u' &&
-                tolower(s[j]) != 'i' && tolower(s[j]) != 'e')
+            if (s[i] == ' ')
             {
-                j--;
-                continue;
+                int end = i;
+                reverse(s.begin() + start, s.begin() + end);
+                start = end + 1;
             }
-            // cout<<s[i]<<" test"<<s[j]<<endl;
-            swap(s[i], s[j]);
-            i++;
-            j--;
         }
+
+        reverse(s.begin() + start, s.begin() + s.size());
         return s;
     }
 };
