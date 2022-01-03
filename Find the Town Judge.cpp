@@ -47,6 +47,8 @@ public:
                     break;
                 }
             }
+            
+            //check rows
             int count = 0;
 
             for (int j = 1; j <= n; j++)
