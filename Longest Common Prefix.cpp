@@ -6,12 +6,10 @@ public:
 
         sort(strs.begin(), strs.end());
 
-        /*  for(int i = 0; i<strs.size(); i++)
-              cout<<strs[i]<<" ";
-
-        */
         // testcase1
         if (strs.size() == 1)
+            return strs[0];
+        else if (strs[0] == "")
             return strs[0];
 
         string str1 = strs[0];
@@ -24,17 +22,9 @@ public:
             else
                 break;
 
-        // int j=2;
-
         for (int i = 2; i < strs.size(); i++)
         {
-
             string s = strs[i];
-
-            // test case 2
-            if (s.size() == 0)
-                return "";
-
             for (int k = 0; k < res.size() && k < s.size(); k++)
                 if (s[k] == res[k])
                     continue;
