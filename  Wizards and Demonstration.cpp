@@ -12,7 +12,7 @@ int main()
     double result = peopleNeeded - x;
     if (result < 0)
     {
-        cout << (int)result;
+        cout <<0;
         return 0;
     }
 
