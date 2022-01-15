@@ -1,3 +1,3 @@
 git add --all
-git commit --all -m "stuck at second last testcase"
+git commit --all -m "recursion practice"
 git push CP master
