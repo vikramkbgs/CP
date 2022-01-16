@@ -1,3 +1,3 @@
 git add --all
-git commit --all -m "recursion practice"
+git commit --all -m "contest question"
 git push CP master
