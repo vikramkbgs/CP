@@ -6,22 +6,31 @@ using namespace std;
 class Solution
 {
 public:
-    // Function to rotate an array by d elements in counter-clockwise direction.
+    // Function to rotate an array by d elements in counter-clockwise direction
     void rotateArr(int arr[], int d, int n)
     {
         // code here
-
-        for (int i = 0; i < d; i++)
+        int i = 0;
+        int j = d-1;
+        while (i < j)
         {
-            int temp = arr[0];
-            for (int j = 0; j < n - 1; j++)
-                arr[j] = arr[j + 1];
-
-            arr[n-1] = temp;
+            swap(arr[i], arr[j]);
+            i++; j--;
+        }
+        
+         i = d; j = n-1;
+        while( i < j)
+        {
+            swap(arr[i],arr[j]);
+            i++; j--;
         }
 
-       // for (int i = 0; i < n; i++)
-            //cout << arr[i] << " ";
+        i = 0; j = n-1;
+        while(i < j)
+        {
+            swap(arr[i], arr[j]);
+            i++; j--;
+        }
     }
 };
 
