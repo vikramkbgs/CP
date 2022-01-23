@@ -17,17 +17,13 @@ int main()
 
         for (int i = 0; i < n; i++)
             cin >> rn[i];
-
         for (int i = 0; i < n; i++)
             cin >> ri[i];
 
         for (int i = 0; i < ri.size(); i++)
         {
-
-            // cout<<"i: "<<i<<"rn"<<rn[i]<<" <="<<"k"<<k<<endl;
             if (rn[i] <= k)
             {
-
                 k = k + ri[i];
                 ri.erase(ri.begin() + i);
                 rn.erase(rn.begin() + i);
