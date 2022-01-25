@@ -84,4 +84,5 @@ int main()
        }
     }
     cout<<count+money/(nb*pb+ns*ps+nc*pc)<<endl;
+    return 0;
 }
