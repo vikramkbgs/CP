@@ -1,13 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-
-
 int main()
 {
     int t; cin>>t;
-    
-    
     while(t--)
     {
       string str; cin>>str;
@@ -26,8 +21,7 @@ int main()
             else
             cout<<"NO"<<endl;
             break;
-          }
-          
+          }  
         if(i >= str.size()/2)
         cout<<"YES"<<endl;
        }
