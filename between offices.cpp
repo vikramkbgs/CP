@@ -7,27 +7,12 @@ int main()
     int n;
     cin >> n;
     char letters[n];
-
     for (int i = 0; i < n; i++)
         cin >> letters[i];
 
-    int cnt_SF, cnt_FS;
-    cnt_SF = cnt_FS = 0;
-    char first = letters[0];
-
-    for (int i = 1; i < n; i++)
-    {
-        if (first != letters[i])
-            if (first == 'S')
-                cnt_SF++;
-            else
-                cnt_FS++;
-
-        first = letters[i];
-    }
-    if (cnt_SF > cnt_FS)
+    if (letters[0] == 'S' && letters[n - 1] == 'F')
         cout << "YES" << endl;
     else
-        cout << "NO" << endl;
+        cout << "NO";
     return 0;
 }
