@@ -10,13 +10,7 @@ int main()
     cin>>n>>m;
     int sum = 0;
     int j =1;
-    
-    if(n == 1 & m == 1)
-    {
-        cout<<0<<endl;
-        return 0;
-    }
-    
+
     for(int i =1; i<=n; i++)
     {
         sum += j;
@@ -25,13 +19,11 @@ int main()
             flag = 1;
             break;
         };
-        
-        j++;
-        
+        j++; 
     }
     if(flag)
     cout<<n-j<<endl;
     else
-    cout<<"wrong algo"<<endl;
+    cout<<"wrong algo"<<endl;   // for debug
     return 0;
 }
