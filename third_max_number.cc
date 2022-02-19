@@ -5,7 +5,6 @@ public:
     {
         long long mx1, mx2, mx3;
         mx1 = mx2 = mx3 = -10e12;
-        int flag = 0;
         for (int q = 0; q < nums.size(); q++)
         {
             if (mx1 <= nums[q])
