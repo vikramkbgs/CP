@@ -31,9 +31,7 @@ int main()
   
   if(s.size() == cCap(s))
   {
-      char temp = toupper(s[0]);
-      cout<<temp;
-      for(int i = 1; i<s.size(); i++)
+      for(int i = 0; i<s.size(); i++)
       {
           char temp = tolower(s[i]);
           cout<<temp;
