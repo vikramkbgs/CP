@@ -1,3 +1,3 @@
 git add --all
-git commit --all -m "Leetcode"
+git commit --all -m "codeforces"
 git push CP master
