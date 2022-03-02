@@ -37,10 +37,13 @@ void solve(int n, int k)
         }
         HASHMAP[temp] = 1;
     }
-    if (result.size() == k)
+    if (result.size() >= k)
     {
         cout << "YES" << endl;
-        output(result) << " ";
+        for (int i = 0; i < k; i++)
+        {
+            cout << result[i] << " ";
+        }
     }
     else
         cout << "NO" << endl;
@@ -50,6 +53,7 @@ void solve(int n, int k)
 
 int main()
 {
+    fast();
     int n, k;
     cin >> n >> k;
     solve(n, k);
