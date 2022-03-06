@@ -1,4 +1,4 @@
-/*------------------------------------------------------------Vikram Roy--------------------------------------------------*/
+/*------------------------------------------------------------Vikram Roy------------------------------------------------------*/
 #include <bits/stdc++.h>
 #define pb push_back
 #define ll long long
@@ -16,22 +16,21 @@ using namespace std;
 // solution of problem
 void solve()
 {
-    int n;
-    cin >> n;
-    int a[5] = {0};
+    int a;
+    cin >> a;
+    int i = 3;
 
-    for (int i = 0; i < n; i++)
-    {
-        int temp;
-        cin >> temp;
-        a[temp]++;
-    }
-
-    ll car = 0;
-    car += min(a[1], a[3]) + (max(a[1], a[3]) - min(a[1], a[3]));
-    car += a[2] / 2 + a[2] % 2;
-    car += a[4];
-    cout << car << endl;
+    if ((a * i) / (i - 2) >= 180)
+        while ((a * i) / (i - 2) >= 180)
+        {
+            if ((float)(a * i) / (i - 2) == (float)180)
+            {
+                cout << "YES" << endl;
+                return;
+            }
+            i++;
+        }
+    cout << "NO" << endl;
     return;
 }
 
@@ -41,7 +40,10 @@ int main()
     cin.tie(0);
     cout.tie(0);
 
-    solve();
+    int t;
+    cin >> t;
+    while (t--)
+        solve();
 
     return 0;
 }

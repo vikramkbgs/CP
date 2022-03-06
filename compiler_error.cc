@@ -1,4 +1,4 @@
-/*------------------------------------------------------------Vikram Roy--------------------------------------------------*/
+/*------------------------------------------------------------Vikram Roy---------------------------------------------------------*/
 #include <bits/stdc++.h>
 #define pb push_back
 #define ll long long
@@ -18,20 +18,29 @@ void solve()
 {
     int n;
     cin >> n;
-    int a[5] = {0};
+    ll sumFirst, sumSecond, sumThird;
+    sumFirst = sumSecond = sumThird = 0;
 
     for (int i = 0; i < n; i++)
     {
-        int temp;
+        ll temp;
         cin >> temp;
-        a[temp]++;
+        sumFirst += temp;
     }
-
-    ll car = 0;
-    car += min(a[1], a[3]) + (max(a[1], a[3]) - min(a[1], a[3]));
-    car += a[2] / 2 + a[2] % 2;
-    car += a[4];
-    cout << car << endl;
+    for (int i = 0; i < n - 1; i++)
+    {
+        ll temp;
+        cin >> temp;
+        sumSecond += temp;
+    }
+    for (int i = 0; i < n - 2; i++)
+    {
+        ll temp;
+        cin >> temp;
+        sumThird += temp;
+    }
+    cout << sumFirst - sumSecond << endl;
+    cout << sumSecond - sumThird << endl;
     return;
 }
 
@@ -41,6 +50,9 @@ int main()
     cin.tie(0);
     cout.tie(0);
 
+    // int t;
+    // cin >> t;
+    // while (t--)
     solve();
 
     return 0;
