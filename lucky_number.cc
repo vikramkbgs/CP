@@ -16,23 +16,10 @@ using namespace std;
 // solution of problem
 void solve()
 {
-    int n,a,b,cnt = 0, draw = 0;
+    int n;
     cin>>n;
-    for(int i=0; i<n; i++)
-    {
-        cin>>a>>b;
-        if(a < b)
-        cnt++;
-        else if(a == b)
-        draw++;
-    }
-    if(((n - draw)-cnt) == cnt)
-        cout << "Friendship is magic!^^"<<endl;
-    else if (((n - draw) - cnt) < cnt)
-        cout << "Chris"<<endl;
-    else
-        cout << "Mishka";
-        return;
+    cout<<2*((1LL<<n) - 1)<<endl;
+    return;
 }
 
 int main()
@@ -40,13 +27,13 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+    // freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "w", stdout);
 
     // int t;
     // cin >> t;
     // while (t--)
-        solve();
+    solve();
 
     return 0;
 }

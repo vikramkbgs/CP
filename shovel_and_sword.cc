@@ -16,23 +16,10 @@ using namespace std;
 // solution of problem
 void solve()
 {
-    int n,a,b,cnt = 0, draw = 0;
-    cin>>n;
-    for(int i=0; i<n; i++)
-    {
-        cin>>a>>b;
-        if(a < b)
-        cnt++;
-        else if(a == b)
-        draw++;
-    }
-    if(((n - draw)-cnt) == cnt)
-        cout << "Friendship is magic!^^"<<endl;
-    else if (((n - draw) - cnt) < cnt)
-        cout << "Chris"<<endl;
-    else
-        cout << "Mishka";
-        return;
+    int n;
+    cin >> n;
+    
+    return;
 }
 
 int main()
@@ -43,9 +30,9 @@ int main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 
-    // int t;
-    // cin >> t;
-    // while (t--)
+    int t;
+    cin >> t;
+    while (t--)
         solve();
 
     return 0;

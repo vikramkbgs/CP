@@ -16,23 +16,18 @@ using namespace std;
 // solution of problem
 void solve()
 {
-    int n,a,b,cnt = 0, draw = 0;
-    cin>>n;
-    for(int i=0; i<n; i++)
+    string s;
+    cin>>s;
+    int cnt = 0;
+    for(int i =0; i<s.size(); i++)
     {
-        cin>>a>>b;
-        if(a < b)
+        if(cnt && s[i] == 'B')
+        cnt--;
+        else
         cnt++;
-        else if(a == b)
-        draw++;
     }
-    if(((n - draw)-cnt) == cnt)
-        cout << "Friendship is magic!^^"<<endl;
-    else if (((n - draw) - cnt) < cnt)
-        cout << "Chris"<<endl;
-    else
-        cout << "Mishka";
-        return;
+    cout<<cnt<<endl;
+         return;
 }
 
 int main()
