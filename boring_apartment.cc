@@ -14,26 +14,22 @@
 using namespace std;
 
 // solution of problem
+int totaldigit(int n)
+{
+    int count = 0;
+    while(n>0)
+    {
+        count++;
+        n /=10;
+    }
+    return count;
+}
 void solve()
 {
-    int n, t, k, b;
-    cin >> n >> t >> k >> b;
-    int singleoven = n / k * t;
-    int doubleoven = 0;
-    int x = 1;
-    while (doubleoven < n)
-    {
-        if (x % t == 0)
-            doubleoven += k;
-        if ((x - b) % (t) == 0 && x > b)
-            doubleoven += k;
-        x++;
-    }
-    if (x - 1 < singleoven)
-        cout << "YES" << endl;
-    else
-        cout << "NO" << endl;
-
+    int n;
+    cin>>n;
+    int ndigit = totaldigit(n);
+    cout<<(n%10 - 1)*10 + (ndigit*(ndigit+1))/2<<endl;
     return;
 }
 
@@ -45,9 +41,9 @@ int main()
     // freopen("input.txt", "r", stdin);
     // freopen("output.txt", "w", stdout);
 
-    // int t;
-    // cin >> t;
-    // while (t--)
+    int t;
+    cin >> t;
+    while (t--)
     solve();
 
     return 0;
