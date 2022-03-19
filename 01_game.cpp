@@ -16,23 +16,19 @@ using namespace std;
 // solution of problem
 void solve()
 {
-    int n;
-    cin >> n;
-    vector<int>odd, even;
-    for(int i =0; i<n; i++)
+    string s;
+    cin>>s;
+    int cnt = 0;
+    for(int i =0; i<s.size(); i++)
     {
-        int temp;
-        cin>>temp;
-        if(temp%2)
-        odd.pb(temp);
-        else
-        even.pb(temp);
+       if(s[i] == '0')
+       cnt++;
     }
-    if(is_sorted(odd.begin(), odd.end())&& is_sorted(even.begin(),even.end()))
-    cout<<"YES"<<endl;
+    if(min(cnt, (int)s.size()-cnt)%2)
+    cout<<"DA"<<endl;
     else
-    cout<<"NO"<<endl;
-    return;
+    cout<<"NET"<<endl;
+   return;
 }
 
 int main()
@@ -47,7 +43,7 @@ int main()
     int t;
     cin >> t;
     while (t--)
-    solve();
+        solve();
 
     return 0;
 }

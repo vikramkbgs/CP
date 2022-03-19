@@ -16,22 +16,23 @@ using namespace std;
 // solution of problem
 void solve()
 {
-    int n;
-    cin >> n;
-    vector<int>odd, even;
-    for(int i =0; i<n; i++)
+    int n, m; 
+    cin>>n>>m;
+    int a[m];
+    read(a);
+    sort(a, a+m);
+    vector<pair<int,pair<int, int>>>x;
+    write(a)<<" ";
+    cout<<endl;
+    for(int i =1; i<m;i++)
     {
-        int temp;
-        cin>>temp;
-        if(temp%2)
-        odd.pb(temp);
-        else
-        even.pb(temp);
+        int temp = a[i]-a[i-1];
+        x.pb({temp,{a[i], a[i-1]}});
     }
-    if(is_sorted(odd.begin(), odd.end())&& is_sorted(even.begin(),even.end()))
-    cout<<"YES"<<endl;
-    else
-    cout<<"NO"<<endl;
+   // sort(x.begin(), x.end());
+    for(int i =0; i<x.size(); i++)
+    cout<<x[i].first<<" ";
+    cout<<"\n"<<(x[0].second).second<<"test :";
     return;
 }
 
@@ -44,9 +45,9 @@ int main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    int t;
-    cin >> t;
-    while (t--)
+    // int t;
+    // cin >> t;
+    // while (t--)
     solve();
 
     return 0;
