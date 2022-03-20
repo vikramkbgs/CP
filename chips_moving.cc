@@ -16,18 +16,19 @@ using namespace std;
 // solution of problem
 void solve()
 {
-    int n, m; 
-    cin>>n>>m;
-    int a[m];
-    read(a);
-    sort(a, a+m);
-    int mn = INT_MAX;
-    for(int i =0; i<=m-n;i++)
+    int n;
+    cin >> n;
+    ll temp;
+    cin>>temp;
+    int count  = 0;
+    for(int i = 1; i<n; i++)
     {
-        if(mn >= a[i+n-1] - a[i])
-            mn = a[i + n - 1] - a[i];
+        ll x; 
+        cin>>x;
+        if(abs(abs(temp)- abs(x))%2)
+        count++;
     }
-    cout<<mn<<endl;
+    cout<<count<<endl;
     return;
 }
 

@@ -16,18 +16,24 @@ using namespace std;
 // solution of problem
 void solve()
 {
-    int n, m; 
-    cin>>n>>m;
-    int a[m];
+    int n;
+    cin>>n;
+    int a[n];
     read(a);
-    sort(a, a+m);
-    int mn = INT_MAX;
-    for(int i =0; i<=m-n;i++)
+    int sum = 0, twin1Money = 0;
+    sum = accumulate(a, a+n, sum);
+    sort(a, a+n);
+    for(int i =n-1; i>= 0; i--)
     {
-        if(mn >= a[i+n-1] - a[i])
-            mn = a[i + n - 1] - a[i];
+        twin1Money += a[i];
+        sum -= a[i];
+        if(twin1Money > sum)
+        {
+            cout<<(n - i)<<endl;
+            return;
+        }
     }
-    cout<<mn<<endl;
+    cout<<n<<endl;
     return;
 }
 
