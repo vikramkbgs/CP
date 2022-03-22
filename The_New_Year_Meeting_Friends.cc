@@ -17,7 +17,27 @@ using namespace std;
 void solve()
 {
     int n;
-    
+    ll sum = 0;
+    cin>>n;
+    if(n == 1)
+    {
+        int temp;
+        cin>>temp;
+        cout<<0<<endl;
+        return;
+    }
+    else
+    {
+        int a[n];
+        read(a);
+        int mx = *max_element(a, a+n);
+        for(int i = 0; i<n; i++)
+        {
+            if(mx - a[i] > 0)
+            sum +=mx - a[i];
+        }
+        cout<<sum<<endl;
+    }
     return;
 }
 
