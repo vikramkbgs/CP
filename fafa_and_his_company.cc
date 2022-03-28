@@ -10,28 +10,23 @@
     cout << i
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
-
 using namespace std;
 
 // solution of problem
 void solve()
 {
     int n;
-    cin>>n;
-    int i = 1;
+    cin >> n;
     int count = 0;
-    int sum = 0;
-    while(n >= sum)
+    for (int i = 1; i <= n / 2; i++)
     {
-        sum += i*(i+1)/2;
-        i++;
-        count++;
-
+        if ((n - i) % i == 0)
+        {
+            count++;
+            //    cout<<"n :"<<n-i<<"i: "<<i<<endl;
+        }
     }
-    if(sum == n)
-    cout<<count<<endl;
-    else
-    cout<<count-1<<endl;
+    cout << count << endl;
     return;
 }
 
@@ -47,7 +42,6 @@ int main()
     // int t;
     // cin >> t;
     // while (t--)
-        solve();
-
+    solve();
     return 0;
 }

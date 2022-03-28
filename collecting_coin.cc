@@ -16,22 +16,14 @@ using namespace std;
 // solution of problem
 void solve()
 {
-    int n;
-    cin>>n;
-    int i = 1;
-    int count = 0;
-    int sum = 0;
-    while(n >= sum)
-    {
-        sum += i*(i+1)/2;
-        i++;
-        count++;
-
-    }
-    if(sum == n)
-    cout<<count<<endl;
+    int a[3], coin;
+    cin>>a[0]>>a[1]>>a[2]>>coin;
+    sort(a, a+3);
+    int balance = a[2] - a[1] + a[2] - a[0];
+    if((coin - balance)%3 || coin < balance)
+    cout<<"NO"<<endl;
     else
-    cout<<count-1<<endl;
+    cout<<"YES"<<endl;
     return;
 }
 
@@ -44,9 +36,9 @@ int main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    // int t;
-    // cin >> t;
-    // while (t--)
+    int t;
+    cin >> t;
+    while (t--)
         solve();
 
     return 0;

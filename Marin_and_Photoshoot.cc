@@ -18,20 +18,22 @@ void solve()
 {
     int n;
     cin>>n;
-    int i = 1;
+    int male, female;
+    male = female = 0;
     int count = 0;
-    int sum = 0;
-    while(n >= sum)
-    {
-        sum += i*(i+1)/2;
-        i++;
-        count++;
 
+    for(int i =0; i<n; i++)
+    {
+        char temp;
+        cin>>temp;
+        if(temp == '0')
+        male++;
+        else if(temp == '1')
+        female++;
+        if(male  female)
+        count = count + 2;
     }
-    if(sum == n)
     cout<<count<<endl;
-    else
-    cout<<count-1<<endl;
     return;
 }
 
@@ -44,10 +46,10 @@ int main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    // int t;
-    // cin >> t;
-    // while (t--)
-        solve();
+    int t;
+    cin >> t;
+    while (t--)
+    solve();
 
     return 0;
 }

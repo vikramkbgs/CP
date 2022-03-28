@@ -16,20 +16,15 @@ using namespace std;
 // solution of problem
 int binarysearch(int a[], int l, int r, int item)
 {
-    int temp = r + 1;
-    while (l <= r)
+    while (l+1 < r)
     {
-        int mid = l + (r - l) / 2;
-        if (a[mid] == item)
-            return r;
-        else if (l == r)
-            return r + 1;
-        else if (a[mid] > item)
-            return binarysearch(a, l, mid - 1, item);
+        int mid =(r+l) / 2;
+        if (a[mid] <= item)
+            l = mid;
         else
-            return binarysearch(a, mid + 1, r, item);
+            r = mid;
     }
-    return temp;
+    return l+1;
 }
 
 void solve()
@@ -42,7 +37,7 @@ void solve()
     {
         int item;
         cin >> item;
-        cout << binarysearch(a, 0, n - 1, item) << endl;
+        cout << binarysearch(a, -1, n, item) << endl;
     }
     return;
 }
