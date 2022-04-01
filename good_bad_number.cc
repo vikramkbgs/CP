@@ -16,44 +16,21 @@ using namespace std;
 // solution of problem
 void solve()
 {
-    int n;
-    cin>>n;
-    int a[n];
-    read(a);
-    sort(a, a+n);
-    int queries;
-    cin>>queries;
-    for(int i =0; i<queries; i++)
+    string s;
+    cin>>s;
+    int l, r;
+    l = -1;
+    r = s.size();
+    while(l + 1 < r)
     {
-        int closest_left, closest_right;
-        cin>>closest_left>>closest_right;
-        int l = -1, r =n;
-        while (l+1 < r)
-        {
-            int mid = (l+r)/2;
-            if(a[mid] <= closest_left)
-            l = mid;
-            else
-            r = mid;
-        }
-        int l_index = l+1;
-        l = -1; r = n;
-        while (l + 1 < r)
-        {
-            int mid = (l + r) / 2;
-            if (a[mid] > closest_right)
-                r = mid;
-            else
-                l = mid;
-        }
-        int r_index;
-        if (a[r] == closest_right)
-        r_index = r + 1;
+        int mid = (l+r)/2;
+        if(s[mid] == '1')
+        r = mid;
         else
-        r_index = r;
-
-        cout<<l_index<<" "<<r_index<<endl;
+        l = mid;
+        cout<<"l: "<<l<<" r: "<<r<<endl;
     }
+    cout<<"r :"<<r<<endl;
     return;
 }
 
