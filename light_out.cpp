@@ -16,12 +16,51 @@ using namespace std;
 // solution of problem
 void solve()
 {
-    string s;
-    cin >> s;
-    int zeroes(0), ones(0);
-    for_each(s.begin(), s.end(), [&](char a)
-             { (a == '1' ? ones++ : zeroes++); });
-    cout << zeroes << " " << ones << endl;
+    int a[3][3] = {{1, 1, 1},
+                   {1, 1, 1},
+                   {1, 1, 1}};
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            int temp;
+            cin >> temp;
+            if (temp % 2)
+            {
+                if (a[i][j] == 1)
+                    a[i][j] = 0;
+                else
+                    a[i][j] = 1;
+
+                if (a[i][j + 1] == 1 && i < 2 && j < 2)
+                    a[i][j + 1] = 0;
+                else
+                    a[i][j + 1] = 1;
+                if (a[i + 1][j] == 1 && i < 2 && j < 2)
+                    a[i + 1][j] = 0;
+                else
+                    a[i + 1][j] = 1;
+
+                if (a[i][j - 1] == 1 && i > 0 && j > 0)
+                    a[i][j - 1] = 0;
+                else
+                    a[i][j-1] = 1;
+
+                if (a[i - 1][j] == 1 && i > 0 && j > 0)
+                    a[i - 1][j] = 0;
+                else
+                    a[i - 1][j] = 1;
+            }
+        }
+    }
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+            cout << a[i][j] << " ";
+
+        cout << endl;
+    }
+    return;
 }
 
 int main()
