@@ -15,19 +15,22 @@ using namespace std;
 // solution of problem
 void solve()
 {
-    int n;
-    cin>>n;
-    int a[n];
-    read(a);
-    sort(a, a+n);
-    ll base = 0;
-    for(int i =0; i<n/2; i++)
-        base += a[i];
-
-    ll height = 0;
-    height = accumulate(a, a+n, height) - base;
-    // cout<<base<<" base : "<< height<<"height :"<<endl;
-    cout<<height*height+base*base<<endl;
+    int n, m;
+    cin>>n>>m;
+    map<string , string> hashmap;
+    for(int i =0; i<n; i++)
+    {
+        string name, ip;
+        cin>>name>>ip;
+        ip +=";";
+        hashmap[ip] = name;
+    }
+    for (int i = 0; i < m; i++)
+    {
+        string name, ip;
+        cin >> name >> ip;
+        cout<<name<<" "<<ip<<" "<<"#"<<hashmap[ip]<<endl;
+    }
     return;
 }
 
