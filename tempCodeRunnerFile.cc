@@ -1,3 +1,3 @@
 int t;
-    // cin >> t;
-    // while (t--)
+    cin >> t;
+    while (t--)
