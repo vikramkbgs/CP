@@ -11,30 +11,35 @@
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
-
-
-
-
-
 using namespace std;
 // solution of problem
 
 void solve()
 {
-    int n, a, b, c, d;
-    cin>>n>>a>>b>>c>>d;
-    int L = n * (a - b), R = n * (a + b);
-    if (R < c - d || c + d < L)
-        cout << "No\n";
+    int n;
+    cin >> n;
+    int a[n];
+    read(a);
+    int copya[n];
+    for(int i =0; i<n; i++)
+        copya[i] = a[i];
+    sort(a, a+n);
+    int cnt = 0;
+
+    for(int i =0; i<n; i++)
+    {
+        if(a[i] != copya[i])
+        cnt++;
+    }
+
+    if(cnt == 0)
+    cout<<0<<endl;
+    else if(cnt == 2)
+    cout<<1<<endl;
     else
-        cout << "Yes\n";
+    cout<<2<<endl;
     return;
 }
-
-
-
-
-
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 int main()
