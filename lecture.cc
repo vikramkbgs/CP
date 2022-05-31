@@ -11,44 +11,16 @@
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
-
-
-
-
 using namespace std;
 // solution of problem
 
 void solve()
 {
-    int n;
-    cin >> n;
-    int a[n];
-    read(a);
-    int copya[n];
-    for (int i = 0; i < n; i++)
-        copya[i] = a[i];
-    sort(a, a + n);
-    int cnt = 0;
-
-    for (int i = 0; i < n; i++)
-    {
-        if (a[i] != copya[i])
-            cnt++;
-    }
-
-    if (cnt == 0)
-        cout << 0 << endl;
-    else if (cnt == 2)
-        cout << 1 << endl;
-    else
-        cout << 2 << endl;
+    int n, m;
+    cin>>n>>m;
+    pair<string, stringgit 
     return;
 }
-
-
-
-
-
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 int main()

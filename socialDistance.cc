@@ -11,44 +11,33 @@
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
-
-
-
-
 using namespace std;
 // solution of problem
 
 void solve()
 {
-    int n;
-    cin >> n;
-    int a[n];
+    int p, c;
+    cin>>p>>c;
+    int a[p];
     read(a);
-    int copya[n];
-    for (int i = 0; i < n; i++)
-        copya[i] = a[i];
-    sort(a, a + n);
-    int cnt = 0;
-
-    for (int i = 0; i < n; i++)
+    sort(a, a+p);
+    ll sum = 0;
+    sum = 2 * a[0] + 1;
+    for(int i = 1; i< p-1; i++)
     {
-        if (a[i] != copya[i])
-            cnt++;
+        sum += a[i]+1;
+        if(sum > c)
+        {
+            cout<<"NO"<<endl;
+            return;
+        }
     }
-
-    if (cnt == 0)
-        cout << 0 << endl;
-    else if (cnt == 2)
-        cout << 1 << endl;
+    if(a[0] < a[p-1] && (sum+abs(a[0]-a[p-1])+1 > c ))
+    cout<<"NO"<<endl;
     else
-        cout << 2 << endl;
+    cout<<"YES"<<endl;
     return;
 }
-
-
-
-
-
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 int main()
