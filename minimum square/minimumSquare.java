@@ -18,17 +18,18 @@ public class minimumSquare {
 			if(l < b)
 			{
 				if(2*l < b)
-				System.out.println((2*l)*(2*l));
+				System.out.println(b*b);
 				else
-				System.out.println(b*b);		
+				System.out.println((2 * l) * (2 * l));		
 			}
 			else
 			{
 				if(2*b < l)
-				System.out.println((2*b)*(2*b));
-				else
 				System.out.println(l*l);
+				else
+				System.out.println((2 * b) * (2 * b));
 			}
+			i++;
 		}
 	}
 }
